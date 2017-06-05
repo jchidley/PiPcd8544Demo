@@ -4,10 +4,10 @@ open System.Text
 open System.Runtime.InteropServices
 
 module private imp =
-  [<DllImport( "libwiringPiSPI.so", EntryPoint="wiringPiSPISetup", CallingConvention = CallingConvention.Cdecl, SetLastError=true )>]
+  [<DllImport( "libwiringPi.so", EntryPoint="wiringPiSPISetup", CallingConvention = CallingConvention.Cdecl, SetLastError=true )>]
   extern int wiringPiSPISetup( int channel, int speed );
 
-  [<DllImport( "libwiringPiSPI.so", EntryPoint="wiringPiSPIDataRW", CallingConvention = CallingConvention.Cdecl, SetLastError=true )>]
+  [<DllImport( "libwiringPi.so", EntryPoint="wiringPiSPIDataRW", CallingConvention = CallingConvention.Cdecl, SetLastError=true )>]
   extern void wiringPiSPIDataRW( int channel, byte[] data, int len );
 
 type spiChannel =
